@@ -1,0 +1,88 @@
+body{
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+#logo{
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 2em;
+    color: mintcream;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+#Search_Button{
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+}
+.weather{
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: bold;
+    margin-top: 0.4%;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+.maintitle{
+    text-align: left;
+    font-size: inherit;
+}
+
+.maincontainer{
+    margin-top: 5em;
+}
+.box{
+    margin-bottom: 0.5em;
+}
+
+#InputBox{
+    text-align:center;
+}
+
+#Weather_input{
+    font-weight: bold;
+    line-height: 3.8em;
+    font-size: 1em;
+}
+
+#City{
+    font-size: 1.8em;
+}
+
+
+.weather_description{
+    margin-bottom: 0;
+    margin-top: 0.8em;
+}
+
+
+#weather_icon{
+    margin-top: 0.07em;
+    text-align: center;
+}
+
+#weathernow{
+    display: inline-flex;
+    margin-left: 20px;
+}
+
+#weathertag_inside_weathernow{
+    margin: 0%;
+    margin-top: 6.4%;
+}
+
+.fas{
+    display: inline-block;
+    font: normal normal normal 19px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+input[type="reset"]:focus{
+    outline: none;   
+}
