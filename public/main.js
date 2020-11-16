@@ -73,11 +73,19 @@ function input_text() {
                 document.body.style.fontWeight = "bold";
                 document.body.style.backgroundColor = "black"
             }
-            
-        }
-        if (json.cod == "404") {
-            console.log("It's error")
-            Weathernow.innerHTML = "It is wrong city name"
+
+            else if (json.cod == "404") {
+                console.log("It's error")
+                // document.title = ``
+                // document.getElementById('weathernow').appendChild(weather_icon); 
+                // City.innerHTML = ``
+                // Temp.innerHTML = ``
+                // FeelingTemp.innerHTML = ``
+                // min_max_temperature.innerHTML = ``
+                // humidity.innerText = ``
+                Weathernow.innerHTML = "It is wrong city name"
+                
+            }
             
         }
     })

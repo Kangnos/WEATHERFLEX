@@ -3,7 +3,7 @@ body{
     color: white;
     background-color: black;
     text-align: center;
-    -webkit-background-size: cover;  
+    font-family: "Malgun Gothic";
 }
 
 #logo{
@@ -15,8 +15,8 @@ body{
 }
 
 #Search_Button{
-    padding-top: 1.4em;
-    padding-bottom: 1.4em;
+    padding-top: 1.8em;
+    padding-bottom: 1.7em;
     padding-left: 1em;
     padding-right: 1em;
     font-weight: bold;
@@ -43,6 +43,7 @@ body{
 
 #InputBox{
     text-align:center;
+    font-size: 1em;
 }
 
 #Weather_input{
