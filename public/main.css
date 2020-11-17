@@ -64,13 +64,13 @@ body{
 
 
 #weather_icon{
-    margin-top: 0.07em;
+    margin-top: 0.42em;
     text-align: center;
 }
 
 #weathernow{
     display: inline-flex;
-    margin-left: 20px;
+    margin-left: 1em;
 }
 
 #weathertag_inside_weathernow{

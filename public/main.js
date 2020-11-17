@@ -64,7 +64,7 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/fog/fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                
+                weather_icon.style.marginTop = "0.1em";
             }
             if (weather.match("snow")) {
                 const random_number = Math.floor(Math.random() * 4) + 1;
