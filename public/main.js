@@ -44,6 +44,7 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/clear/clear${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
+                weather_icon.style.marginTop = "0.38em"
             }
             if (weather.match("clouds")) {
                 const random_number = Math.floor(Math.random() * 7) + 1;
