@@ -20,5 +20,6 @@
 
 ## WEBSITE looks like this
 
-<img width="1437" alt="스크린샷 2020-11-12 오후 11 05 26" src="https://user-images.githubusercontent.com/57825621/98949997-ca2a4c80-253b-11eb-889f-fb48a1146c92.png">
-<img width="1440" alt="스크린샷 2020-11-12 오후 11 06 24" src="https://user-images.githubusercontent.com/57825621/98950001-cb5b7980-253b-11eb-8f8d-8579c873c561.png">
+<img width="1437" alt="readme weatherflex ver 1 " src="https://user-images.githubusercontent.com/57825621/99903942-fea3c280-2d0a-11eb-9eb4-ae889bdf369e.png">
+
+<img width="1440" alt="readme weather flex ver 2" src="https://user-images.githubusercontent.com/57825621/99903938-fc416880-2d0a-11eb-8c3e-176cd6c762fc.png">
