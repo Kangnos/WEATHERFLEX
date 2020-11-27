@@ -11,8 +11,8 @@ function input_text() {
     var citynameinputText = document.getElementById("Weather_input").value;
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${citynameinputText}&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr`
-    ).then(function (response) {
-        return response.json();
+    ).then(function (res) {
+        return res.json();
     }).then(function (json) {
         console.log(json)
         if (json.cod == "200") {

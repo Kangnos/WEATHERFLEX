@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="translated-box"></div>
+</body>
+</html>
+
+
+<script>
+  import translate from 'google-translate-open-api';
+  const result = await translate(`I'm fine.`, {
+    tld: "cn",
+    to: "zh-CN",
+  });
+  const data = result.data[0];
+  document.getElementById("translated-box").innerHTML = result.data[0]
+</script>
