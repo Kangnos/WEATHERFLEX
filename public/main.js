@@ -5,11 +5,12 @@ var FeelingTemp = document.getElementById("FeelingTemp")
 var Weathernow = document.getElementById("weathernow")
 var min_max_temperature = document.getElementById("min_max_temperature")
 var humidity = document.getElementById("humidity")
+var windspeed = document.getElementById("windspeed")
 
 function input_text() {
     var citynameinputText = document.getElementById("Weather_input").value;
     fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${citynameinputText}&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang={kr}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${citynameinputText}&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr`
     ).then(function (response) {
         return response.json();
     }).then(function (json) {
@@ -28,7 +29,7 @@ function input_text() {
             document.getElementById('weathernow').appendChild(weather_icon); 
 
             // Main weathher forecast work
-            document.title = `Weather in ${json.name}`
+            document.title = `Weather in ${json.name}`              
             const weather = json.weather[0].description
             Weathernow.innerHTML = '<p id="weathertag_inside_weathernow">' + weather + "</p>"
             document.getElementById('weathernow').appendChild(weather_icon); 
@@ -37,39 +38,41 @@ function input_text() {
             FeelingTemp.innerHTML = "Feels-like Temperature: " + json.main.feels_like + "°C";
             min_max_temperature.innerHTML = json.main.temp_min + "°C " + "/ " + json.main.temp_max + "°C "
             humidity.innerText = "humidity: " + json.main.humidity + "%"
+            windspeed.innerHTML = "Wind Speed: " + json.wind.speed + "m/s";
+            
 
             // Finding weather status by using 'if'
             if (weather.match('clear')) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/clear/clear${random_number}.jpg')`;
+                
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.38em"
             }
             if (weather.match("clouds")) {
                 const random_number = Math.floor(Math.random() * 7) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/cloudy/cloudy${random_number}.jpg')`;
+                
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
             if (weather.match("rain") || weather.match("drizzle") || weather.match("thunderstorm")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/rainy/rainy${random_number}.jpg')`;
+                
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
             if (weather.match("fog") || weather.match("haze") || weather.match("mist")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/fog/fog${random_number}.jpg')`;
+                
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.1em";
             }
             if (weather.match("snow")) {
                 const random_number = Math.floor(Math.random() * 4) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/snow/snow${random_number}.jpg')`;
+                
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 document.body.style.backgroundColor = "black"
