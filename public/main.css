@@ -63,9 +63,7 @@ body{
 }
 
 
-#weather_icon{
-    margin-top: 0.5em;
-    text-align: center;
+#weather_icon{    text-align: center;
 }
 
 #weathernow{

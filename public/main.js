@@ -42,37 +42,37 @@ function input_text() {
             
 
             // Finding weather status by using 'if'
-            if (weather.match('clear')) {
+            if (weather.match('맑음')) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                
+                document.body.style.backgroundImage = `url('../wallpapers/Clear/Clear${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                weather_icon.style.marginTop = "0.38em"
+                weather_icon.style.marginTop = "0.28em"
             }
             if (weather.match("clouds")) {
                 const random_number = Math.floor(Math.random() * 7) + 1;
-                
+                document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
             if (weather.match("rain") || weather.match("drizzle") || weather.match("thunderstorm")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                
+                document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
             if (weather.match("fog") || weather.match("haze") || weather.match("mist")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
-                
+                document.body.style.backgroundImage = `url('../wallpapers/Fog/Fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.1em";
             }
             if (weather.match("snow")) {
                 const random_number = Math.floor(Math.random() * 4) + 1;
-                
+                document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 document.body.style.backgroundColor = "black"
