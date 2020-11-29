@@ -4,6 +4,9 @@
 #### Search the weather that you placed, and you can find the weather where you are.
 
 
+## USED API Link
+#### https://openweathermap.org/current
+
 ### How to run?
 
 #### 1. open cmd
