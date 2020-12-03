@@ -25,7 +25,6 @@ function input_text() {
             // img set up work 
             var weather_icon = document.createElement('img');
             weather_icon.id = "weather_icon" 
-            weather_icon.src = `http://openweathermap.org/img/wn/${json.weather[0].icon}.png`; 
             document.getElementById('weathernow').appendChild(weather_icon); 
 
             // Main weathher forecast work
@@ -49,28 +48,28 @@ function input_text() {
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.28em"
             }
-            if (weather.match("clouds")) {
+            if (weather.match("구름") || weather.match("흐림")) {
                 const random_number = Math.floor(Math.random() * 7) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
-            if (weather.match("rain") || weather.match("drizzle") || weather.match("thunderstorm")) {
+            if (weather.match("비") || weather.match("drizzle") || weather.match("thunderstorm")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 
             }
-            if (weather.match("fog") || weather.match("haze") || weather.match("mist")) {
+            if (weather.match("안개") || weather.match("haze") || weather.match("mist")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Fog/Fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.1em";
             }
-            if (weather.match("snow")) {
+            if (weather.match("눈")) {
                 const random_number = Math.floor(Math.random() * 4) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number}.jpg')`;
                 document.body.style.color = "white";
