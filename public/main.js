@@ -30,7 +30,7 @@ function input_text() {
             // Main weathher forecast work
             document.title = `Weather in ${json.name}`              
             const weather = json.weather[0].description
-            Weathernow.innerHTML = '<p id="weathertag_inside_weathernow">' + weather + "</p>"
+            Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
             document.getElementById('weathernow').appendChild(weather_icon); 
             City.innerHTML = "Temperature in " + json.name
             Temp.innerHTML = "Current Temperature: " + json.main.temp + "°C";
@@ -46,14 +46,17 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/Clear/Clear${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                weather_icon.style.marginTop = "0.28em"
+                weather_icon.src = "/Brand-New weather icons/clear sky.png"
+                weather_icon.style.width = "1.4em"
+                weather_icon.style.height = "1.4em"
+                weather_icon.style.marginLeft = "0.5em"
+                
             }
             if (weather.match("구름") || weather.match("흐림")) {
                 const random_number = Math.floor(Math.random() * 7) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                
             }
             if (weather.match("비") || weather.match("drizzle") || weather.match("thunderstorm")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
