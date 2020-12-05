@@ -57,6 +57,10 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
+                weather_icon.src = "/Brand-New weather icons/scattered clouds.png"
+                weather_icon.style.width = "2.5em"
+                weather_icon.style.height = "1.4em"
+                weather_icon.style.marginLeft = "0.5em"
             }
             if (weather.match("비") || weather.match("drizzle") || weather.match("thunderstorm")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
