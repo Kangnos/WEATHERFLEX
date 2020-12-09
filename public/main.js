@@ -29,8 +29,13 @@ function input_text() {
 
             // Main weathher forecast work
             document.title = `Weather in ${json.name}`              
-            const weather = json.weather[0].description
-            Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
+            const weather = json.weather[0].description;
+            if (weather.match("실")) {
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "이슬 비" + "</p>"
+            }
+            else{
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
+            }
             document.getElementById('weathernow').appendChild(weather_icon); 
             City.innerHTML = "Temperature in " + json.name
             Temp.innerHTML = "Current Temperature: " + json.main.temp + "°C";
@@ -67,7 +72,10 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                
+                weather_icon.src = "/Brand-New weather icons/rain.png"
+                weather_icon.style.width = "2.5em"
+                weather_icon.style.height = "1.4em"
+                weather_icon.style.marginLeft = "0.5em"
             }
             if (weather.match("안개") || weather.match("haze") || weather.match("mist")) {
                 const random_number = Math.floor(Math.random() * 10) + 1;
