@@ -36,8 +36,14 @@ function input_text() {
             else{
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
             }
+            if (weather.match("온흐림")) {
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "흐림" + "</p>"
+            }
+            else{
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
+            }
             document.getElementById('weathernow').appendChild(weather_icon); 
-            City.innerHTML = "Temperature in " + json.name
+            City.innerHTML = json.name
             Temp.innerHTML = "Current Temperature: " + json.main.temp + "°C";
             FeelingTemp.innerHTML = "Feels-like Temperature: " + json.main.feels_like + "°C";
             min_max_temperature.innerHTML = json.main.temp_min + "°C " + "/ " + json.main.temp_max + "°C "
@@ -47,7 +53,7 @@ function input_text() {
 
             // Finding weather status by using 'if'
             if (weather.match('맑음')) {
-                const random_number = Math.floor(Math.random() * 10) + 1;
+                const random_number = Math.floor(Math.random() * 22) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Clear/Clear${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
@@ -58,34 +64,34 @@ function input_text() {
                 
             }
             if (weather.match("구름") || weather.match("흐림")) {
-                const random_number = Math.floor(Math.random() * 7) + 1;
+                const random_number = Math.floor(Math.random() * 18) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.src = "/Brand-New weather icons/scattered clouds.png"
-                weather_icon.style.width = "2.5em"
-                weather_icon.style.height = "1.4em"
+                weather_icon.style.width = "1.78em"
+                weather_icon.style.height = "1.2em"
                 weather_icon.style.marginLeft = "0.5em"
             }
             if (weather.match("비") || weather.match("drizzle") || weather.match("thunderstorm")) {
-                const random_number = Math.floor(Math.random() * 10) + 1;
+                const random_number = Math.floor(Math.random() * 12) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.src = "/Brand-New weather icons/rain.png"
-                weather_icon.style.width = "2.5em"
-                weather_icon.style.height = "1.4em"
+                weather_icon.style.width = "1.5em"
+                weather_icon.style.height = "1em"
                 weather_icon.style.marginLeft = "0.5em"
             }
             if (weather.match("안개") || weather.match("haze") || weather.match("mist")) {
-                const random_number = Math.floor(Math.random() * 10) + 1;
+                const random_number = Math.floor(Math.random() * 9) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Fog/Fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 weather_icon.style.marginTop = "0.1em";
             }
             if (weather.match("눈")) {
-                const random_number = Math.floor(Math.random() * 4) + 1;
+                const random_number = Math.floor(Math.random() * 9) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
