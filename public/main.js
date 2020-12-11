@@ -30,21 +30,30 @@ function input_text() {
             // Main weathher forecast work
             document.title = `Weather in ${json.name}`              
             const weather = json.weather[0].description;
+
+            // rain
             if (weather.match("실")) {
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "이슬 비" + "</p>"
             }
             else{
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
             }
-            if (weather.match("온흐림")) {
+
+            // Clouds
+            if (weather.match("튼구름") ) {
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "대체로 흐림" + "</p>"
+            }
+            else if(weather.match("온흐림")){
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "흐림" + "</p>"
             }
             else{
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
             }
-            if(json.weather[0].main.match("Mist"))
+
+            // Fog
+            if(json.weather[0].main.match("Mist") || json.weather[0].main.match("Haze") || json.weather[0].main.match("Fog"))
             {
-                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "흐림" + "</p>"
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "안개" + "</p>"
             }
             document.getElementById('weathernow').appendChild(weather_icon); 
             City.innerHTML = json.name
@@ -118,6 +127,11 @@ function input_text() {
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 document.body.style.backgroundColor = "black"
+                weather_icon.src = "/Brand-New weather icons/snow.png"
+                weather_icon.style.width = "1.5em"
+                weather_icon.style.height = "1.4em"
+                weather_icon.style.marginLeft = "0.5em"
+                weather_icon.style.marginTop = "0.2em";
             }
 
             else if (json.cod == "404") {
