@@ -42,6 +42,10 @@ function input_text() {
             else{
                 Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">' + weather + "</p>"
             }
+            if(json.weather[0].main.match("Mist"))
+            {
+                Weathernow.innerHTML = '<p id="weathertag_inside_weathernow" style="margin:0px">'+ "흐림" + "</p>"
+            }
             document.getElementById('weathernow').appendChild(weather_icon); 
             City.innerHTML = json.name
             Temp.innerHTML = "Current Temperature: " + json.main.temp + "°C";
@@ -61,6 +65,7 @@ function input_text() {
                 weather_icon.style.width = "1.4em"
                 weather_icon.style.height = "1.4em"
                 weather_icon.style.marginLeft = "0.5em"
+                weather_icon.style.marginTop = "0.2em";
                 
             }
             if (weather.match("구름") || weather.match("흐림")) {
@@ -68,12 +73,12 @@ function input_text() {
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                weather_icon.src = "/Brand-New weather icons/scattered clouds.png"
-                weather_icon.style.width = "1.78em"
+                weather_icon.src = "/Brand-New weather icons/broken clouds.png"
+                weather_icon.style.width = "2em"
                 weather_icon.style.height = "1.2em"
                 weather_icon.style.marginLeft = "0.5em"
             }
-            if (weather.match("비") || weather.match("drizzle") || weather.match("thunderstorm")) {
+            if (weather.match("비") || weather.match("소나기")) {
                 const random_number = Math.floor(Math.random() * 12) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
                 document.body.style.color = "white";
@@ -82,13 +87,30 @@ function input_text() {
                 weather_icon.style.width = "1.5em"
                 weather_icon.style.height = "1em"
                 weather_icon.style.marginLeft = "0.5em"
+                weather_icon.style.marginTop = "0.2em";
             }
-            if (weather.match("안개") || weather.match("haze") || weather.match("mist")) {
+
+            if(weather.match("뇌우")){
+                const random_number = Math.floor(Math.random() * 12) + 1;
+                document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
+                document.body.style.color = "white";
+                document.body.style.fontWeight = "bold";
+                weather_icon.src = "/Brand-New weather icons/thunderstorm.png"
+                weather_icon.style.width = "1.5em"
+                weather_icon.style.height = "1em"
+                weather_icon.style.marginLeft = "0.5em"
+                weather_icon.style.marginTop = "0.2em";
+            }
+            if (weather.match("안개") || weather.match("박무") || weather.match("연무")) {
                 const random_number = Math.floor(Math.random() * 9) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Fog/Fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
-                weather_icon.style.marginTop = "0.1em";
+                weather_icon.src = "/Brand-New weather icons/fog.png"
+                weather_icon.style.width = "1.9em"
+                weather_icon.style.height = "1em"
+                weather_icon.style.marginLeft = "0.5em"
+                weather_icon.style.marginTop = "0.2em";
             }
             if (weather.match("눈")) {
                 const random_number = Math.floor(Math.random() * 9) + 1;
