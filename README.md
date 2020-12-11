@@ -12,7 +12,7 @@
 #### 1. open cmd
 #### `cd file name`
 #### `node main.js`
-#### go to localhost:3000 server
+#### Go to localhost:3000 server and Now you are in the WEATHERFLEX!
 
 
 ## NEXT Update Plan
