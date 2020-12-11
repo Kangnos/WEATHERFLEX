@@ -87,6 +87,16 @@ function input_text() {
                 weather_icon.style.height = "1.2em"
                 weather_icon.style.marginLeft = "0.5em"
             }
+            if(weather.match("약간") && weather.match("구름")){
+                const random_number = Math.floor(Math.random() * 18) + 1;
+                document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
+                document.body.style.color = "white";
+                document.body.style.fontWeight = "bold";
+                weather_icon.src = "/Brand-New weather icons/few clouds.png"
+                weather_icon.style.width = "1.7em"
+                weather_icon.style.height = "1.2em"
+                weather_icon.style.marginLeft = "0.5em"
+            }
             if (weather.match("비") || weather.match("소나기")) {
                 const random_number = Math.floor(Math.random() * 12) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Rainy/Rainy${random_number}.jpg')`;
