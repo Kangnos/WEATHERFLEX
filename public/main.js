@@ -66,7 +66,7 @@ function input_text() {
 
             // Finding weather status by using 'if'
             if (weather.match('맑음')) {
-                const random_number = Math.floor(Math.random() * 22) + 1;
+                const random_number = Math.floor(Math.random() * 25) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Clear/Clear${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
@@ -74,11 +74,11 @@ function input_text() {
                 weather_icon.style.width = "1.4em"
                 weather_icon.style.height = "1.4em"
                 weather_icon.style.marginLeft = "0.5em"
-                weather_icon.style.marginTop = "0.2em";
+                weather_icon.style.marginTop = "0em";
                 
             }
             if (weather.match("구름") || weather.match("흐림")) {
-                const random_number = Math.floor(Math.random() * 18) + 1;
+                const random_number = Math.floor(Math.random() * 19) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Cloudy/Cloudy${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
@@ -121,7 +121,7 @@ function input_text() {
                 weather_icon.style.marginTop = "0.2em";
             }
             if (weather.match("안개") || weather.match("박무") || weather.match("연무")) {
-                const random_number = Math.floor(Math.random() * 9) + 1;
+                const random_number = Math.floor(Math.random() * 10) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Fog/Fog${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
@@ -132,7 +132,7 @@ function input_text() {
                 weather_icon.style.marginTop = "0.2em";
             }
             if (weather.match("눈")) {
-                const random_number = Math.floor(Math.random() * 9) + 1;
+                const random_number = Math.floor(Math.random() * 13) + 1;
                 document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
