@@ -12,13 +12,11 @@
 #### 1. open cmd
 #### `cd file name`
 #### `node main.js`
-#### go to localhost:3000 server
+#### Go to localhost:3000 server and Now you are in the WEATHERFLEX!
 
 
 ## NEXT Update Plan
-#### 1. If I search the city name, It will print the time of the city down of the weather description section.
-#### 2. Design;Make it more simple (ex. make font more slim)
-#### 3. divide the words between ':" in the description section.
+#### Design;Make it more simple (ex. make font more slim)
 
 
 ## WEBSITE looks like this
@@ -27,8 +25,3 @@
 
 <img width="1440" alt="readme weather flex ver 2" src="https://user-images.githubusercontent.com/57825621/99903938-fc416880-2d0a-11eb-8c3e-176cd6c762fc.png">
 
-
-
-## 공부 하겠습니다
-## 12월 7일 시험 잘보고 오겠습니다!
-## 공약: 시험 평균 86점 
