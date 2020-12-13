@@ -159,4 +159,3 @@ function input_text() {
         }
     })
 }
-
