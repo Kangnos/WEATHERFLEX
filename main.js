@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 var WeatherFlexMainpage = require('./lib/searchpage.js')
 var WeatherFlexWeatherpage = require("./lib/weatherpage.js");
-var Weatherflex_main_code = require("./public/main.js");
 const { request } = require('http');
 
 
@@ -21,8 +20,7 @@ app.get('/', function (req, res) {
     res.send(weatherflex_homepage);
 });
 
-app.get("/search/:id", function(req,res){
-    console.log(req.body.user.name)
+app.get("/search", function(req,res){
     var weatherflex_weatherpage = WeatherFlexWeatherpage.HTML();
     res.send(weatherflex_weatherpage);
 })
