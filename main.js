@@ -14,9 +14,8 @@ app.get('/', function (req, res) {
     res.send(weatherflex_homepage);
 });
 
-app.get("/:id", function(req,res){
+app.get("/search", function(req,res){
     var weatherflex_weatherpage = WeatherFlexWeatherpage.HTML();
-    request.url = 
     res.send(weatherflex_weatherpage);
 })
 
