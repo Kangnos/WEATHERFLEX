@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 var WeatherFlexMainpage = require('./lib/searchpage.js')
 var WeatherFlexWeatherpage = require("./lib/weatherpage.js");
 const { request } = require('http');
+var weather = require('openweather-apis');
 
 
 app.use(express.static('public'));
