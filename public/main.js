@@ -1,4 +1,3 @@
-const { request } = require("express");
 
 function input_text() {
     var City = document.getElementById("City");
