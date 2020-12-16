@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 var WeatherFlexMainpage = require('./lib/searchpage.js')
 var WeatherFlexWeatherpage = require("./lib/weatherpage.js");
 const { request } = require('http');
-var weather = require('openweather-apis');
+var open_weather_api = require('openweather-apis');
 
 
 app.get('/', function (req, res) {
@@ -44,9 +44,8 @@ app.use("/search", function(req,res){
                 </div>
                 <div class="weather">
                     <div class="weather_description">
-                        <div id="City" class="box"></div>
-                        <div id="Temp" class="box"></div>
-                        <div id="FeelingTemp" class="box"></div>
+                        <div id="City" class="box">${city_name}</div>
+                        <div id="Temp" class="box">Current Temperature</div>
                         <div id="weathernow" class="box"></div>
                         <div id="min_max_temperature" class="box"></div>
                         <div id="humidity" class="box"></div>
