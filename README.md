@@ -19,7 +19,7 @@
 #### Design;Make it more simple (ex. make font more slim)
 
 
-## WEBSITE looks like this
+## WEBSITE looks like this (0.1 beta version)
 
 <img width="1437" alt="readme weatherflex ver 1 " src="https://user-images.githubusercontent.com/57825621/99903942-fea3c280-2d0a-11eb-9eb4-ae889bdf369e.png">
 
