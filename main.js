@@ -48,10 +48,9 @@ app.get('/', function (req, res) {
                     </div>
                 </div>
             </div>
+            <!-- 날씨에 따라서 특정 코드를 http://openweathermap.org/img/w/과 .png 사이에 넣으면 아이콘이 생성됨 -->
         </body>
         </html>
-        <script >
-        </script>
         <script src="main.js"></script>
         <script src="iconcreate.js"></script>
         <link rel="stylesheet" href="main.css">
@@ -61,7 +60,7 @@ app.get('/', function (req, res) {
 
 app.use("/search", function(req,res){
     var city_name = req.query.placename;
-    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name);
+    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML();
     res.send(WeatherFlexWeatherpage);
 })
 

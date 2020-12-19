@@ -1,13 +1,12 @@
-
+var City = document.getElementById("City");
+var Temp = document.getElementById("Temp");
+var FeelingTemp = document.getElementById("FeelingTemp")
+var Weathernow = document.getElementById("weathernow")
+var min_max_temperature = document.getElementById("min_max_temperature")
+var humidity = document.getElementById("humidity")
+var windspeed = document.getElementById("windspeed")
+var citynameinputText = document.getElementById("Weather_input").value;
 function input_text() {
-    var City = document.getElementById("City");
-    var Temp = document.getElementById("Temp");
-    var FeelingTemp = document.getElementById("FeelingTemp")
-    var Weathernow = document.getElementById("weathernow")
-    var min_max_temperature = document.getElementById("min_max_temperature")
-    var humidity = document.getElementById("humidity")
-    var windspeed = document.getElementById("windspeed")
-    var citynameinputText = document.getElementById("Weather_input").value;
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${citynameinputText}&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr`
     ).then(function (res) {
