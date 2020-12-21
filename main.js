@@ -22,8 +22,8 @@ app.get('/', function (req, res) {
 });
 
 app.use("/search", function(req,res){
-    var city_name = req.query.placename;
-    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML();
+    var city_name = req.query.placename.toLowerCase();
+    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name);
     res.send(WeatherFlexWeatherpage);
 })
 

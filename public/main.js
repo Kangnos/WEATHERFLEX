@@ -5,10 +5,11 @@ var Weathernow = document.getElementById("weathernow")
 var min_max_temperature = document.getElementById("min_max_temperature")
 var humidity = document.getElementById("humidity")
 var windspeed = document.getElementById("windspeed")
-var citynameinputText = document.getElementById("Weather_input").value;
+var citynameinputText = document.getElementById("Weather_input").placename;
 function input_text() {
+    console.log(citynameinputText)
     fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${citynameinputText}&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr`
+        'https://api.openweathermap.org/data/2.5/weather?q='+ citynameinputText + '&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr'
     ).then(function (res) {
         return res.json();
     }).then(function (json) {
@@ -140,20 +141,20 @@ function input_text() {
                 weather_icon.style.marginLeft = "0.5em"
                 weather_icon.style.marginTop = "0.2em";
             }
+        }
 
-            else if (json.cod == "404") {
-                console.log("It's error")
-                // document.title = ``
-                // document.getElementById('weathernow').appendChild(weather_icon); 
-                // City.innerHTML = ``
-                // Temp.innerHTML = ``
-                // FeelingTemp.innerHTML = ``
-                // min_max_temperature.innerHTML = ``
-                // humidity.innerText = ``
-                Weathernow.innerHTML = "It is wrong city name"
-                
-            }
+        else if (json.cod == "404") {
+            console.log("It's error")
+            // document.title = ``
+            // document.getElementById('weathernow').appendChild(weather_icon); 
+            // City.innerHTML = ``
+            // Temp.innerHTML = ``
+            // FeelingTemp.innerHTML = ``
+            // min_max_temperature.innerHTML = ``
+            // humidity.innerText = ``
+            Weathernow.innerHTML = "It is wrong city name"
             
         }
+            
     })
 }
