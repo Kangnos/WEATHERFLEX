@@ -1,13 +1,15 @@
 var express = require('express')
-var compression = require('compression')
-var bodyParser = require("body-parser")
 const app = express();
+const fs = require("fs");
+var compression = require('compression')
+app.use(compression())
+var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+var url = require('url');
 app.use(express.static('public'));
-app.use(compression())
-
+app.use(bodyParser.json());
 const Homepage = require("./lib/Homepage.js")
 const WeatherFlexMainpage  = require("./lib/weatherpage.js");
 const { request } = require('http');
@@ -20,24 +22,9 @@ app.get('/', function (req, res) {
 
 app.use("/search", function(req,res){
     var city_name = req.query.placename.toLowerCase();
-    let apiKey = "cbe7f1eb13ae670e2e99a200f1df5a94"
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${apiKey}&units=metric&lang=kr`
-    request(url, function (err, response, body) {
-        if(err){
-          res.render('index');
-        } 
-        else {
-            let weather = JSON.parse(body)
-            if(weather.main == undefined){
-              res.render('index');
-            } else {
-              let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-              let weatherpage = WeatherFlexMainpage.HTML(weatherText)
-              res.send(weatherpage);
-            }
-        }
-    });
-});
+    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name);
+    res.send(WeatherFlexWeatherpage);
+})
 
 app.listen(3000, function () {
     console.log("Example app is running")
