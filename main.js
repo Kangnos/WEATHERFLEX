@@ -26,13 +26,15 @@ app.use("/search", function(req,res){
     console.log(city_name)
     request('https://api.openweathermap.org/data/2.5/weather?q='+ city_name + '&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr',function(error, response, body){
         if(!error&&response.statusCode==200){
-            console.log(body);
             const json = JSON.parse(body);
-            console.log(json.weather)
+            console.log(json)
+            // UI method
+            const cityPlacename = json.name;
+            console.log(cityPlacename)
+            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename);
+            res.send(WeatherFlexWeatherpage);
         }
     });
-    var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name);
-    res.send(WeatherFlexWeatherpage);
 })
 
 app.listen(3000, function () {
