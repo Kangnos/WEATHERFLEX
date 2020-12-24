@@ -30,8 +30,9 @@ app.use("/search", function(req,res){
             console.log(json)
             // UI method
             const cityPlacename = json.name;
+            const weather = json.weather[0].main;
             console.log(cityPlacename)
-            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename);
+            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather);
             res.send(WeatherFlexWeatherpage);
         }
     });
