@@ -28,11 +28,19 @@ app.use("/search", function(req,res){
         if(!error&&response.statusCode==200){
             const json = JSON.parse(body);
             console.log(json)
-            // UI method
-            const cityPlacename = json.name;
-            const weather = json.weather[0].main;
+
+            // Essential UI method
+            const cityPlacename = json.name;    
+            const temp_min = json.main.temp_min;
+            const temp_max = json.main.temp_max;
+            const current_temp = json.main.temp;
+            const humidity = json.main.humidity;
+            const weather = json.weather[0].description; // 날씨 현황 
+            const wind_speed = json.wind.speed;
             console.log(cityPlacename)
-            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather);
+
+
+            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed);
             res.send(WeatherFlexWeatherpage);
         }
     });

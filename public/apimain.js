@@ -131,7 +131,7 @@ function input_text() {
             }
             if (weather.match("눈")) {
                 const random_number = Math.floor(Math.random() * 13) + 1;
-                document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number.jpg')`;
+                document.body.style.backgroundImage = `url('../wallpapers/Snow/Snow${random_number}.jpg')`;
                 document.body.style.color = "white";
                 document.body.style.fontWeight = "bold";
                 document.body.style.backgroundColor = "black"
