@@ -1,4 +1,4 @@
-## MAIN PROJECT - WEATHER GRAB
+## MAIN PROJECT - WEATHER GRAB (WeatherFlex)
 
 ## Description
 #### Search the weather that you placed, and you can find the weather where you are.
