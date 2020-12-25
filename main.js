@@ -27,8 +27,7 @@ app.use("/search", function(req,res){
     request('https://api.openweathermap.org/data/2.5/weather?q='+ city_name + '&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr',function(error, response, body){
         if(!error&&response.statusCode==200){
             const json = JSON.parse(body);
-            console.log(json)
-
+    
             // Essential UI method
             const cityPlacename = json.name;    
             const temp_min = json.main.temp_min;
@@ -37,10 +36,14 @@ app.use("/search", function(req,res){
             const humidity = json.main.humidity;
             const weather = json.weather[0].description; // 날씨 현황 
             const wind_speed = json.wind.speed;
+
+            const clear_day_random_number = Math.floor(Math.random() * 25)+1;
+
+            // TEST
+            console.log(json)
             console.log(cityPlacename)
 
-
-            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed);
+            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed, clear_day_random_number);
             res.send(WeatherFlexWeatherpage);
         }
     });
