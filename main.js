@@ -38,13 +38,21 @@ app.use("/search", function(req,res){
             const wind_speed = json.wind.speed;
 
             const clear_day_random_number = Math.floor(Math.random() * 25)+1;
+            const cloudy_day_random_number = Math.floor(Math.random() * 19) + 1;
+            const rainy_random_number = Math.floor(Math.random() * 12) + 1;
+            const foggy_day_random_number = Math.floor(Math.random() * 10) + 1;
+            const snowy_day_random_number = Math.floor(Math.random() * 13) + 1;
 
             // TEST
             console.log(json)
             console.log(cityPlacename)
 
-            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed, clear_day_random_number);
+            var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed, clear_day_random_number,cloudy_day_random_number,rainy_random_number,foggy_day_random_number,snowy_day_random_number);
             res.send(WeatherFlexWeatherpage);
+        }
+        else if (response.statusCode == 400) {
+            res.status(500);
+            res.render('error', { error: err });
         }
     });
 })
