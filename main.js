@@ -34,7 +34,7 @@ app.use("/search", function(req,res){
             const temp_max = json.main.temp_max;
             const current_temp = json.main.temp;
             const humidity = json.main.humidity;
-            const weather = json.weather[0].description; // 날씨 현황 
+            var weather = json.weather[0].description; // 날씨 현황 
             const wind_speed = json.wind.speed;
 
             const clear_day_random_number = Math.floor(Math.random() * 25)+1;
@@ -42,16 +42,29 @@ app.use("/search", function(req,res){
             const rainy_random_number = Math.floor(Math.random() * 12) + 1;
             const foggy_day_random_number = Math.floor(Math.random() * 10) + 1;
             const snowy_day_random_number = Math.floor(Math.random() * 13) + 1;
+            
 
+            if (weather.match("실")) {
+                weather = "이슬 비"
+            }
+
+            // Clouds
+            if (weather.match("튼구름") ) {
+                weather = "대체로 흐림"
+            }
+            if(weather.match("온흐림")){
+                weather = "흐림"
+            }
+            
             // TEST
             console.log(json)
             console.log(cityPlacename)
+            console.log(weather)
 
             var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed, clear_day_random_number,cloudy_day_random_number,rainy_random_number,foggy_day_random_number,snowy_day_random_number);
             res.send(WeatherFlexWeatherpage);
         }
-        else if (response.statusCode == 400) {
-            res.status(500);
+        else if (err && response.statusCode == 400) {
             res.render('error', { error: err });
         }
     });
