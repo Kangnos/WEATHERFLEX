@@ -25,7 +25,8 @@ app.use("/search", function(req,res){
     var city_name = req.query.placename;
     console.log(city_name)
     request('https://api.openweathermap.org/data/2.5/weather?q='+ city_name + '&appid=cbe7f1eb13ae670e2e99a200f1df5a94&units=metric&lang=kr',function(error, response, body){
-        if(!error&&response.statusCode==200){
+        const json = JSON.parse(body);
+        if(json.cod == "200"){
             const json = JSON.parse(body);
     
             // Essential UI method
@@ -55,17 +56,23 @@ app.use("/search", function(req,res){
             if(weather.match("온흐림")){
                 weather = "흐림"
             }
+
+            // Mist
+            if (weather.match("박무")) {
+                weather = "안개"
+            }
             
             // TEST
             console.log(json)
             console.log(cityPlacename)
             console.log(weather)
+            console.log(json.cod)
 
             var WeatherFlexWeatherpage = WeatherFlexMainpage.HTML(city_name, cityPlacename, weather,temp_max,temp_min, current_temp, humidity, wind_speed, clear_day_random_number,cloudy_day_random_number,rainy_random_number,foggy_day_random_number,snowy_day_random_number);
             res.send(WeatherFlexWeatherpage);
         }
-        else if (err && response.statusCode == 400) {
-            res.render('error', { error: err });
+        else{
+            console.log("error")
         }
     });
 })
