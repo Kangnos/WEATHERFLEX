@@ -13,11 +13,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 const Homepage = require("./lib/Homepage.js")
 const WeatherFlexMainpage  = require("./lib/weatherpage.js");
+const Errorpage = require("./lib/Errorpage.js")
 
 
 app.get('/', function (req, res) {
     var city_name = req.query.placename;
-    var Homepagetemplate = Homepage.HTML(city_name);
+    var Homepagetemplate = Homepage.HTML();
     res.send(Homepagetemplate);
 });
 
@@ -72,6 +73,8 @@ app.use("/search", function(req,res){
             res.send(WeatherFlexWeatherpage);
         }
         else{
+            var Homepagetemplate = Errorpage.HTML();
+            res.send(Homepagetemplate);
             console.log("error")
         }
     });
