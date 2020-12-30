@@ -10,7 +10,7 @@
 ### How to run?
 
 #### 1. open cmd
-#### `cd file name`
+#### `cd file name` 
 #### `node main.js`
 #### Go to localhost:3000 server and Now you are in the WEATHERFLEX!
 
