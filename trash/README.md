@@ -16,8 +16,7 @@
 
 
 ## NEXT Update Plan
-#### Design;Make it more simple (ex. make font more slim)
-
+#### Remake with REACT
 
 ## WEBSITE looks like this
 ![readme weather flex ver 3](https://user-images.githubusercontent.com/57825621/103137298-1952c800-470b-11eb-978d-89be484d1d59.PNG)
