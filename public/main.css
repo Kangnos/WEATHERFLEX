@@ -10,17 +10,10 @@ body{
     font-weight: bold;
     text-decoration: none;
     font-size: 2em;
-    color: mintcream;
+    color: rgb(202, 211, 206);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#Search_Button{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-weight: lighter;
-}
 .weather{
     text-align: center;
     font-size: 2em;
@@ -41,16 +34,25 @@ body{
     margin-bottom: 0.5em;
 }
 
-#InputBox{
-    text-align:center;
-    font-size: 1em;
-}
-
+/* 날씨 입력부분들 */
 #Weather_input{
-    font-weight: lighter;
-    line-height: 3em;
-    font-size: 1em;
+    font-size: auto;
+    width: 25em;
+    height: 2em;
+    padding: 0.625em;
+    border: 0px;
+    outline: none;
 }
+#Search_Button{
+    width: 3em;
+    height: 3.44em;
+    border: 0px;
+    background: #1b5ac2;
+    outline: none;
+    font-weight: lighter;
+}
+/* 여기까지 */
+
 
 #City{
     font-size: 1.8em;
