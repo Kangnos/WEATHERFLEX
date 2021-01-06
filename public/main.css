@@ -36,20 +36,21 @@ body{
 
 /* 날씨 입력부분들 */
 #Weather_input{
-    font-size: auto;
+    font-size: 1em;
     width: 25em;
-    height: 2em;
+    height: 3.5em;  /* height+1.44em = Search button height:  */
     padding: 0.625em;
     border: 0px;
     outline: none;
 }
 #Search_Button{
-    width: 3em;
-    height: 3.44em;
+    width: 4.94em;
+    height: 4.94em;
     border: 0px;
     background: #1b5ac2;
     outline: none;
     font-weight: lighter;
+    font-size: 1em;
 }
 /* 여기까지 */
 
