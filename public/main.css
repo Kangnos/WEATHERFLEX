@@ -1,93 +1,89 @@
-
-body{
-    color: white;
-    background-color: black;
-    text-align: center;
-    font-family: "Malgun Gothic";
+body {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-family: "Malgun Gothic";
 }
 
-#logo{
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 2em;
-    color: rgb(202, 211, 206);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+#logo {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2em;
+  color: rgb(202, 211, 206);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.weather{
-    text-align: center;
-    font-size: 2em;
-    font-weight: lighter;
-    margin-top: 0.4%;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+.weather {
+  text-align: center;
+  font-size: 2em;
+  font-weight: lighter;
+  margin-top: 0.4%;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
 }
 
-.maintitle{
-    text-align: left;
-    font-size: inherit;
+.maintitle {
+  text-align: left;
+  font-size: inherit;
 }
 
-.maincontainer{
-    margin-top: 5em;
+.maincontainer {
+  margin-top: 5em;
 }
-.box{
-    margin-bottom: 0.5em;
+.box {
+  margin-bottom: 0.5em;
 }
 
 /* 날씨 입력부분들 */
-#Weather_input{
-    font-size: 1em;
-    width: 25em;
-    height: 3.5em;  /* height+1.44em = Search button height:  */
-    padding: 0.625em;
-    border: 0px;
-    outline: none;
+#Weather_input {
+  font-size: 1em;
+  width: 25em;
+  height: 3.5em; /* height+1.44em = Search button height:  */
+  padding: 0.625em;
+  border: 0px;
+  outline: none;
 }
-#Search_Button{
-    width: 4.94em;
-    height: 4.94em;
-    border: 0px;
-    background: #1b5ac2;
-    outline: none;
-    font-weight: lighter;
-    font-size: 1em;
+#Search_Button {
+  width: 4.94em;
+  height: 4.94em;
+  border: 0px;
+  background: #1b5ac2;
+  outline: none;
+  font-weight: lighter;
+  font-size: 1em;
 }
 /* 여기까지 */
 
-
-#City{
-    font-size: 1.8em;
+#City {
+  font-size: 1.8em;
 }
 
-
-.weather_description{
-    margin-bottom: 0;
-    margin-top: 0.8em;
+.weather_description {
+  margin-bottom: 0;
+  margin-top: 0.8em;
 }
 
-
-#weather_icon{
-    text-align: center;
+#weather_icon {
+  text-align: center;
 }
 
-#weathernow{
-    display: inline-flex;
-    margin-left: 1em;
+#weathernow {
+  display: inline-flex;
+  margin-left: 1em;
 }
 
-#weathertag_inside_weathernow{
-    margin: 0%;
-    margin-top: 6.4%;
+#weathertag_inside_weathernow {
+  margin: 0%;
+  margin-top: 6.4%;
 }
 
-.fas{
-    display: inline-block;
-    font: normal normal normal 19px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+.fas {
+  display: inline-block;
+  font: normal normal normal 19px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
-input[type="reset"]:focus{
-    outline: none;   
+input[type="reset"]:focus {
+  outline: none;
 }
